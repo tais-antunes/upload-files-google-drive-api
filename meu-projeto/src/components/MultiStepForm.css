@@ -1,0 +1,23 @@
+.step-actions-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+  }
+
+
+.titulo{
+  display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.h1-itens {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 5.0rem !important;
+  color: darkgreen;
+}

@@ -1,0 +1,112 @@
+/* Upload.css */
+.upload-container {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 21.75px;
+  color: rgba(0, 0, 0, 0.87);
+  height: 100vh;
+  /* background-color: #f5f5f5; */
+  /* padding: 20px; */
+}
+
+h1{
+  margin: 0.8rem 0 1.0rem 0 !important;
+}
+
+.upload-heading {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px !important;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: darkgreen;
+}
+
+.custom-file-upload {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.custom-file-upload label {
+  cursor: pointer;
+}
+
+.card.checklist-card {
+  border: none;
+  box-shadow: none;
+}
+.upload-button {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.upload-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.upload-button:hover {
+  background-color: #0054a8;
+}
+
+.link-back {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.checklist-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* padding: 10px; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  top: 10%
+}
+
+.checklist-card {
+  width: 300px;
+}
+
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checklist-label {
+  display: flex;
+  align-items: center;
+}
+
+.checklist-label input {
+  margin-right: 10px;
+}
+
+ul:not(.browser-default) {
+  border: none;
+}
+
+.card.checklist-card {
+  border: none;
+  box-shadow: none;
+}
+
+.card:card-content {
+border: none
+}

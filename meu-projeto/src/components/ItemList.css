@@ -1,0 +1,13 @@
+.h1-list {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 5.0rem !important;
+    color: darkgreen;
+  }
+
+  .waves-effect {
+    font-weight: 600;
+  }

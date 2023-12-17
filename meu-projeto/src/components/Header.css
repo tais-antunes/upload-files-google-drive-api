@@ -1,0 +1,22 @@
+.user-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .logout-link {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+
+  nav {
+    background-color: #4CAF50; 
+    margin: 0;
+  }
+  
+
+  .nav-wrapper {
+    width: 100%;
+  }
+  

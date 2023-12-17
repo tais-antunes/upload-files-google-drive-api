@@ -1,0 +1,44 @@
+.wizard-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .step-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .step-indicator {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .step-indicator.active {
+    background: green;
+    color: white;
+  }
+  
+  .connector-line {
+    height: 2px;
+    background: #ccc;
+    flex: 1;
+  }
+  
+  .step-indicator.active + .connector-line,
+  .step-indicator.active ~ .connector-line {
+    background: green;
+  }
+  
+  .step-indicator:not(:last-child) {
+    margin-right: 10px;
+  }
+  

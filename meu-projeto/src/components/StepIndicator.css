@@ -1,0 +1,69 @@
+/* styles.css */
+.step-indicator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin-top: 2%;
+}
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: auto;
+}
+
+.step-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  background-color: #ccc;
+  opacity: 0.5;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.step-label.active {
+  background-color: #4caf50;
+  opacity: 1;
+}
+
+.step-label.visible {
+  opacity: 1;
+}
+
+.step-description {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.connector-line {
+  height: 2px;
+  width: 30%;
+  background-color: #ccc;
+  top: 50%;
+}
+
+.connector-line.active {
+  background-color: #4caf50;
+}
+.connector-line:nth-child(2) {
+  left: 45%; /* Ajuste a posição do conector para que esteja ao lado do segundo círculo */
+}
+
+.connector-line:nth-child(3) {
+  left: 75%; /* Ajuste a posição do conector para que esteja ao lado do terceiro círculo */
+}

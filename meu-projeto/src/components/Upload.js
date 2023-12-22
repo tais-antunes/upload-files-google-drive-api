@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import api from '../api';
 import RegrasModal from '../components/Modal';
 import Toast from '../components/Toast';
@@ -8,9 +8,40 @@ const Upload = ({ onUploadComplete, itemList }) => {
   const [preview, setPreview] = useState([]);
   const [isRegrasModalOpen, setIsRegrasModalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [driveFiles, setDriveFiles] = useState([]);
 
   const fileInputRef = useRef(null);
 
+
+
+const fetchDriveFiles = async () => {
+  try {
+    console.log('Antes da chamada para /list');
+    const response = await api.get('/list', { withCredentials: true });
+
+      console.log('Após a chamada para /list', response);
+      setDriveFiles(response.data.files);
+  } catch (error) {
+    console.error('Erro ao obter a lista de arquivos do Google Drive:', error);
+
+    if (error.response) {
+      console.error('Status do erro:', error.response.status);
+      console.error('Dados do erro:', error.response.data);
+    } else if (error.request) {
+      console.error('Sem resposta do servidor:', error.request);
+    } else {
+      console.error('Erro durante a configuração da requisição:', error.message);
+    }
+  }
+};
+
+
+
+
+  useEffect(() => {
+    fetchDriveFiles();
+  }, []); 
+  
   const handleFileChange = () => {
     const selectedFiles = fileInputRef.current.files;
     setFiles(Array.from(selectedFiles));
@@ -72,20 +103,23 @@ const Upload = ({ onUploadComplete, itemList }) => {
         }, 10000);
   
         onUploadComplete(itemNames);
+        await fetchDriveFiles(); 
       } else {
         console.error('Falha no envio dos arquivos.');
       }
     } catch (error) {
       console.error('Erro ao enviar os arquivos:', error);
+      setToastMessage('Erro ao enviar os arquivos. Por favor, tente novamente.');
     }
   };
+  
 
   return (
     <div>
       <Toast message={toastMessage} />
       <div className="upload-container">
-        <div className="upload-content" style={{ /*width: '80%',*/ padding: '1rem' }}>
-        <h1 className="upload-heading" style={{ fontSize: '30px'}}>Upload de arquivos para o Google Drive</h1>
+        <div className="upload-content" style={{ padding: '1rem' }}>
+          <h1 className="upload-heading" style={{ fontSize: '30px' }}>Upload de arquivos para o Google Drive</h1>
           <div className="row">
             <div className="col s12">
               <div className="card">
@@ -152,6 +186,13 @@ const Upload = ({ onUploadComplete, itemList }) => {
       <div className="upload-container">
         <RegrasModal isOpen={isRegrasModalOpen} onClose={() => setIsRegrasModalOpen(false)} />
       </div>
+
+      <h2>Lista de Arquivos no Google Drive:</h2>
+      <ul>
+        {driveFiles.map((file) => (
+          <li key={file.id}>{file.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };

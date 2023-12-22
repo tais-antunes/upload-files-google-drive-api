@@ -89,7 +89,7 @@ const ItemListComponent = () => {
 
   return (
     <div className="container" style={{ maxWidth: '70%' }}>
-      <h1 className="center-align h1-list">Lista de Itens</h1>
+      <h1 className="center-align h1-list">Cadastrar Itens</h1>
       <div className="row">
         <div className="input-field col s8">
           <input
@@ -105,7 +105,7 @@ const ItemListComponent = () => {
           </button>
         </div>
       </div>
-      <h1 className="h1-list">Itens Adicionados</h1>
+      <h1 className="h1-list">Lista de Itens</h1>
       <ul className="collection">
         {items.map((item) => (
           <li className="collection-item" key={item.id}>
